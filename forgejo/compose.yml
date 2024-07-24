@@ -1,0 +1,14 @@
+services:
+  forgejo:
+    image: codeberg.org/forgejo/forgejo:7
+    container_name: forgejo
+    restart: unless-stopped
+    ports:
+      - 8084:3000
+      - 222:22
+    volumes:
+      - ./data/forgejo:/data
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      USER_UID: 1000
+      USER_GID: 1000
