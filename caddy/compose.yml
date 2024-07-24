@@ -1,0 +1,14 @@
+services:
+  caddy:
+    image: iarekylew00t/caddy-cloudflare
+    container_name: caddy
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    network_mode: host
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy-data:/data
+
+volumes:
+  caddy-data:
