@@ -7,5 +7,5 @@ services:
      - 8081:80
     volumes:
      - ./data:/data:rw
-     # environment:
-      # - SIGNUPS_ALLOWED=false
+    environment:
+      SIGNUPS_ALLOWED: ${SIGNUPS_ALLOWED}
